@@ -7,7 +7,7 @@ const reducer = (state = initialState, action) => {
         case 'ADD_PERSON': 
         return {
             ...state,
-            persons: state.persons.concat({ id: Math.random(), name: 'Max', age: Math.floor(Math.random() * 40)})
+            persons: state.persons.concat({ id: Math.random(), name: action.personData.name, age: action.personData.age})
         }
         case 'DELETE_PERSON':
             let newArr = state.persons.filter(person => person.id !== action.id) 
